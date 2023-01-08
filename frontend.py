@@ -11,7 +11,7 @@ from requests.exceptions import MissingSchema
 
 # image = Image.open('images/among-us-sus.gif')
 
-st.title('GPT-Injector ')
+st.title('GPT-Roaster ')
 
 user_input = st.text_input(
         "Enter URL:",
