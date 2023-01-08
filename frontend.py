@@ -5,6 +5,7 @@ import scanner as sc
 import url_phishing 
 from PIL import Image
 from pathlib import Path
+import webcrawler as wc
 
 from requests.exceptions import MissingSchema
 
@@ -28,7 +29,15 @@ try:
 
     res = url_phishing.analyze_url(user_input)
 
-    st.write(res)
+    st.write("Website Trustability: {} ".format(res[0]))
+
+    positive,negative,neutral = wc.url_scrabber(user_input)
+
+    st.write("Positive sentiment: {}".format(positive))
+    st.write("Negative sentiment: {}".format(negative))
+    st.write("Neutral sentiment: {}".format(neutral))
+   
+    
     # st.image(image, caption='Sunrise by the mountains')
     # st.markdown("![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
 except:

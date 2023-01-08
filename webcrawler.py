@@ -30,7 +30,7 @@ def url_scrabber(url):
     print("Negative reviews = ",negative)
     print("total reviews = ",x)
 
-    return positive,negative,neutral, x
+    return positive,negative,neutral
 
 if __name__ == "__main__":
     url_scrabber("https://www.imdb.com/title/tt5956100/reviews")
