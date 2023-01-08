@@ -6,7 +6,7 @@ import url_phishing
 from PIL import Image
 from pathlib import Path
 import webcrawler as wc
-
+import writerGPT
 from requests.exceptions import MissingSchema
 
 # image = Image.open('images/among-us-sus.gif')
@@ -37,7 +37,7 @@ try:
     st.write("Negative sentiment: {}".format(negative))
     st.write("Neutral sentiment: {}".format(neutral))
    
-    
+    st.write(writerGPT.paragraph())
     # st.image(image, caption='Sunrise by the mountains')
     # st.markdown("![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
 except:
