@@ -11,9 +11,11 @@ import pickle
 
 loaded_model = pickle.load(open('phishing.pkl', 'rb'))
 
-user_url = input('what url would you like to check?')
+# user_url = input('what url would you like to check?')
 
-new_list = [user_url]
+def analyze_url(user_url):
+    new_list = [user_url]
 
-result = loaded_model.predict(new_list)
-print(result)
+    result = loaded_model.predict(new_list)
+    print(result)
+    return result
