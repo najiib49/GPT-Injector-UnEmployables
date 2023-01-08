@@ -3,9 +3,12 @@ import streamlit as st
 # import numpy as np
 import scanner as sc
 import url_phishing 
+from PIL import Image
+from pathlib import Path
 
 from requests.exceptions import MissingSchema
 
+# image = Image.open('images/among-us-sus.gif')
 
 st.title('GPT-Injector ')
 
@@ -26,6 +29,8 @@ try:
     res = url_phishing.analyze_url(user_input)
 
     st.write(res)
+    # st.image(image, caption='Sunrise by the mountains')
+    # st.markdown("![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
 except:
     st.write("PLEASE ENTER A URL : 😀 ")
 
