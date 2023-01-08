@@ -32,5 +32,12 @@ def url_scrabber(url):
 
     return positive,negative,neutral
 
+def get_title(url):
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content,'html.parser')  #parsing html pages
+    print(soup.title.string)
+    return soup.title.string
+
 if __name__ == "__main__":
     url_scrabber("https://www.imdb.com/title/tt5956100/reviews")
+    get_title("https://www.imdb.com/title/tt5956100/reviews")
