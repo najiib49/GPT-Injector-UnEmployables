@@ -6,12 +6,12 @@ Created on Sat Jan  7 13:55:28 2023
 """
 
 import requests
-target ="http://testphp.vulnweb.com/"
-payload  = "<script> alert(XSS);</script>"
 
-req = requests.post(target + payload)
-if payload in req.text:
-    print("XSS vulneribility discovered!")
-    print("Attack payload:"+payload)
-else:
-    print("Secure")
+def xss_checker(target):
+    payload  = "<script> alert(XSS);</script>"
+    
+    req = requests.post(target + payload)
+    if payload in req.text:
+        return 'False'
+    else:
+        return 'True'
