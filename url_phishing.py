@@ -7,15 +7,15 @@ Original file is located at
     https://colab.research.google.com/drive/1jmRyPWrEHA-GJqLZ526rBsFMRPgjKqOC
 """
 
-import pickle
 
-loaded_model = pickle.load(open('phishing.pkl', 'rb'))
 
 # user_url = input('what url would you like to check?')
 
 def analyze_url(user_url):
+    import pickle
+
+    loaded_model = pickle.load(open('phishing.pkl', 'rb'))
     new_list = [user_url]
 
     result = loaded_model.predict(new_list)
-    print(result)
     return result
